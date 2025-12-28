@@ -26,6 +26,7 @@ typedef struct VNode { // dinh nghia kieu du lieu moi VNode co cac thanh phan
 
 VNode* root; // tao ra thu muc goc
 VNode* cwd; // thu muc dang lam viec
+VNode* home;
 // -> biet duoc duong dan va vi tri hien tai ban dang dung
 
 void init_fs() {
@@ -75,7 +76,7 @@ void cmd_ls(){ // tao lenh ls
 void cmd_cd(char* arg){ // kenh cd
     // cd khong co doi so
     if(arg == NULL) { // neu arg khong co nghia
-        printf("cd: missing argument\n");
+        cwd = home ;
         return;
     }
 
